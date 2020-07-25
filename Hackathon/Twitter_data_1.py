@@ -4,10 +4,11 @@ import pandas as pd
 import datetime as dt
 from twitterscraper import query_tweets
 
-consumer_key= 'soZ5a2JkN99AHkd3JDWgZjcfE'
-consumer_secret= 'czzJJh1okrojA1oS7Ti6yFkh3EpN2R2O7ZSB79YjLDuXGwa03J'
-access_token= '188545418-fCkF7ub3dikMcUZKpOS3AOLlRhnxNLNftrjqTgjA'
-access_token_secret= 'Tx5RPGPULDqLipbrorJ9iBtNVdfywhCtIOniCRs0OcGDO'
+# Twitter API credentials
+consumer_key= 'consumer_key'
+consumer_secret= 'consumer_secret'
+access_token= 'access_token'
+access_token_secret= 'access_token_secret'
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -27,10 +28,12 @@ users_locs = [[tweet.user.id,
 tweet_text = pd.DataFrame(data=users_locs, 
                  columns=['id','user', 'location', 'Tweet', 'Hashtags', 'likes', 'Retweets', 'Date'])
 
-tweet_text.shape
+print(tweet_text.shape)
 
-start_date = dt.date(2020,5,22)
-end_date = dt.date(2020,5,31)
+# Does not get all data so using Twitterscraper library
+
+start_date = dt.date(2020,5,1)
+end_date = dt.date(2020,7,15)
 language = 'english'
 delta = dt.timedelta(days=1)
 file_append = 'Tweets'
