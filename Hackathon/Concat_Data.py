@@ -3,7 +3,7 @@ import os
 import glob
 import pandas as pd
 #set working directory
-os.chdir("F:\Hackathon")
+os.chdir("----dir----")
 
 
 extension = 'csv'
